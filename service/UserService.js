@@ -37,7 +37,6 @@ class UserService {
         
         user = await this.userRepository.findUserByAccountNumber(accountNumber);
         if (user) {
-            // Store the result in cache for future requests
             await cacheService.set(`user:account:${accountNumber}`, user);
         }
         return user;
@@ -52,7 +51,6 @@ class UserService {
 
         user = await this.userRepository.findUserByIdentityNumber(identityNumber);
         if (user) {
-            // Store the result in cache for future requests
             await this.cacheService.set(`user:identity:${identityNumber}`, user);
         }
         return user;

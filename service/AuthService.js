@@ -24,7 +24,7 @@ class AuthService {
         return res.status(403).send({ message: 'Invalid token.' });
       }
       
-      req.user = decoded; // Attach user data from token to request object
+      req.user = decoded;
       next();
     });
   }

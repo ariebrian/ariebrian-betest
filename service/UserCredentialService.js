@@ -23,11 +23,9 @@ class UserCredentialService {
           throw new Error('Email is already registered');
         }
     
-        // Hash the password before saving the user
         const hashedPassword = await bcrypt.hash(password, 10);
         userCredentialData.password = hashedPassword;
 
-        // Create new user
         const newUser = await this.userCredentialRepository.createUserCredential(userCredentialData);
     
         return {

@@ -6,8 +6,8 @@ services:
     ports:
       - "3000:3000"  # Expose the app on port 3000
     environment:
-      MONGODB_URI: mongodb+srv://ariebrian22:FjZ0LRNwVUCrM5Ov@cluster0.bmozg.mongodb.net/  # Replace with your actual database name
-      REDIS_HOST: redis  # Service name for Redis
+      MONGODB_URI: mongodb+srv://<username>:<password>@<url>/  # Replace with your actual database name
+      REDIS_HOST: redis
     depends_on:
       - mongodb
       - redis
@@ -15,9 +15,9 @@ services:
   mongodb:
     image: mongo
     ports:
-      - "27017:27017"  # Expose MongoDB on port 27017
+      - "27017:27017"
 
   redis:
     image: redis
     ports:
-      - "6379:6379"  # Expose Redis on port 6379
+      - "6379:6379"
