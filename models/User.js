@@ -6,7 +6,6 @@ const userSchema = new mongoose.Schema({
     accountNumber: String,
     emailAddress: String,
     identityNumber: String,
-    password: String,
 });
 
 userSchema.index({ accountNumber: 1 }, { unique: true });
